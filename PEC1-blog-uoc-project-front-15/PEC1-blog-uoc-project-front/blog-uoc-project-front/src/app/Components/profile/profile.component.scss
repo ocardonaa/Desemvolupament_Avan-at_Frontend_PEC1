@@ -2,6 +2,15 @@
   color: red;
 }
 
+div.field {
+  display: block;
+  padding-bottom: 1em;
+}
+
+span {
+  display: block;
+}
+
 #profileFeedback {
   visibility: hidden;
   min-width: 250px;
@@ -34,6 +43,7 @@
     bottom: 0;
     opacity: 0;
   }
+
   to {
     bottom: 30px;
     opacity: 1;
@@ -45,6 +55,7 @@
     bottom: 0;
     opacity: 0;
   }
+
   to {
     bottom: 30px;
     opacity: 1;
@@ -56,6 +67,7 @@
     bottom: 30px;
     opacity: 1;
   }
+
   to {
     bottom: 0;
     opacity: 0;
@@ -67,6 +79,7 @@
     bottom: 30px;
     opacity: 1;
   }
+
   to {
     bottom: 0;
     opacity: 0;
