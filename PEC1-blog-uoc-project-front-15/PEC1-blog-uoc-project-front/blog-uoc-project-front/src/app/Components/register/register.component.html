@@ -56,7 +56,7 @@
       <input type="email" [formControl]="email" />
       <div *ngIf="email.errors">
         <span class="error" *ngIf="email.invalid">Email is not valid, must have the format of an email</span>
-        <span class="error" *ngIf="email.errors?.required">First surname is required</span>
+        <span class="error" *ngIf="email.errors?.required">Email is required</span>
       </div>
     </div>
 

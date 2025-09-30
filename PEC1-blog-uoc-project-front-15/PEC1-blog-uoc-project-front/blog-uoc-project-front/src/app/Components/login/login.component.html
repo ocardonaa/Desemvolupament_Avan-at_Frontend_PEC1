@@ -3,6 +3,27 @@
 </div>
 <div>
   <h1>Login</h1>
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <div class="field">
+      <label for="email">Email: </label>
+      <input type="email" [formControl]="email" />
+      <div *ngIf="email.errors">
+        <span class="error" *ngIf="email.invalid">Email is not valid, must have the format of an email</span>
+        <span class="error" *ngIf="email.errors?.required">Email is required</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="password">Password: </label>
+      <input type="password" [formControl]="password" />
+      <div *ngIf="password.errors">
+        <span class="error" *ngIf="password.invalid">Password is not valid, must be between 8 to 16
+          characters</span>
+        <span class="error" *ngIf="password.errors?.required">Password is required</span>
+      </div>
+    </div>
+    <button type="submit" [disabled]="!loginForm.valid">Login</button>
+  </form>
 
   <!-- TODO 21 -->
 </div>

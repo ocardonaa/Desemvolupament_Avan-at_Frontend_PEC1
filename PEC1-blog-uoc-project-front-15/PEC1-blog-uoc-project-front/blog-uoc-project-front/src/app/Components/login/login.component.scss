@@ -2,6 +2,15 @@
   color: red;
 }
 
+div.field {
+  display: block;
+  padding-bottom: 1em;
+}
+
+span {
+  display: block;
+}
+
 #loginFeedback {
   visibility: hidden;
   min-width: 250px;
