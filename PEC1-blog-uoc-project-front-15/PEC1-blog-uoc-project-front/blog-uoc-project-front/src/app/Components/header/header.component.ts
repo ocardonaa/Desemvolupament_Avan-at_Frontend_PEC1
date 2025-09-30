@@ -58,6 +58,13 @@ export class HeaderComponent implements OnInit {
   }
 
   logout(): void {
-    // TODO 15
+    this.localStorageService.remove('user_id');
+    this.localStorageService.remove('access_token');
+    const headerInfo: HeaderMenus = {
+      showAuthSection: false,
+      showNoAuthSection: true
+    };
+    this.headerMenusService.headerManagement.next(headerInfo);
+    this.home();
   }
 }
