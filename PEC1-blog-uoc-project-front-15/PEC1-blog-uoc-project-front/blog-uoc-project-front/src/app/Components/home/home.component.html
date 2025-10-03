@@ -1,1 +1,27 @@
 <!-- TODO 3 -->
+<h1>List of Posts</h1>
+<div>
+    <ul class="single-post" *ngFor="let post of posts$ | async">
+        <li style="font-weight: 700;">
+            Title: {{ post.title }}
+        </li>
+        <li>
+            Description: {{ post.description }}
+        </li>
+        <li>
+            Likes: {{ post.num_likes }}
+        </li>
+        <li>
+            Dislikes: {{ post.num_dislikes }}
+        </li>
+        <li>
+            Publication date: {{ post.publication_date }}
+        </li>
+        <li>
+        </li>
+        <li *ngIf="showButtons">
+            <button>Like</button>
+            <button>Dislike</button>
+        </li>
+    </ul>
+</div>

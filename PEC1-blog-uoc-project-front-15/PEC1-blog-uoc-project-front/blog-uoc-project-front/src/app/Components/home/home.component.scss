@@ -1,0 +1,15 @@
+@mixin centered-object {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul.single-post {
+    border: 2px solid black;
+    @include centered-object();
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 40%;
+    margin-right: 45%;
+    display: block;
+}
