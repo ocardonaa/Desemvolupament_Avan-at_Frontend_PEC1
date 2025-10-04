@@ -5,11 +5,13 @@
   <button (click)="home()">Home</button>
   <button (click)="login()">Login</button>
   <button (click)="register()">Register</button>
+  <button (click)="dashboard()">Dashboard</button>
 </div>
 
 <!-- AUTH REQUIRED -->
 <div *ngIf="showAuthSection">
   <button (click)="home()">Home</button>
+  <button (click)="dashboard()">Dashboard</button>
   <button (click)="adminPosts()">Admin posts</button>
   <button (click)="adminCategories()">Admin categories</button>
   <button (click)="profile()">Profile</button>

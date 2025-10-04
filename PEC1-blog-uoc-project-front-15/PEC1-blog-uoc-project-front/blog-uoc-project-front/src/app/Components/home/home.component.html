@@ -1,7 +1,7 @@
 <!-- TODO 3 -->
 <h1>List of Posts</h1>
 <div>
-    <ul class="single-post" *ngFor="let post of posts$ | async">
+    <ul class="single-post" *ngFor="let post of posts">
         <li style="font-weight: 700;">
             Title: {{ post.title }}
         </li>
@@ -20,8 +20,8 @@
         <li>
         </li>
         <li *ngIf="showButtons">
-            <button>Like</button>
-            <button>Dislike</button>
+            <button (click)="like(post.postId)">Like</button>
+            <button (click)="dislike(post.postId)">Dislike</button>
         </li>
     </ul>
 </div>

@@ -16,7 +16,7 @@ import { UserService } from 'src/app/Services/user.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  posts$: Observable<PostDTO[]>;
+  posts!: PostDTO[];
   //userName$: Observable<string>;
   //private userIdSubject = new BehaviorSubject<string>('');
   //userId$: Observable<string> = this.userIdSubject.asObservable();
@@ -30,7 +30,6 @@ export class HomeComponent {
     private headerMenusService: HeaderMenusService
   ) {
     this.showButtons = false;
-    this.posts$ = of([]);
     //this.userName$ = of('');
   }
 
@@ -74,8 +73,9 @@ export class HomeComponent {
       this.showButtons = true;
     }
     try {
-      this.posts$ = from(this.postService.getPosts());
-      console.log(this.posts$);
+      this.posts = await this.postService.getPosts();
+      this.posts.sort((p1, p2) =>  p1.postId.localeCompare(p2.postId));
+      //console.log(this.posts)
     } catch (error: any) {
       errorResponse = error.error;
       this.sharedService.errorLog(errorResponse);
@@ -95,6 +95,7 @@ export class HomeComponent {
 
   async like(postId: string): Promise<void> {
     let errorResponse: any;
+    console.log(postId);
     try {
       await this.postService.likePost(postId);
       this.loadPosts();
@@ -106,6 +107,7 @@ export class HomeComponent {
 
   async dislike(postId: string): Promise<void> {
     let errorResponse: any;
+    console.log(postId);
     try {
       await this.postService.dislikePost(postId);
       this.loadPosts();
