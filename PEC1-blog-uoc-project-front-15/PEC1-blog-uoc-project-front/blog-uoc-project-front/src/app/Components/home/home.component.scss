@@ -4,12 +4,29 @@
     align-items: center;
 }
 
-ul.single-post {
-    border: 2px solid black;
+ul.container-post {
+    border: 1px solid black;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     @include centered-object();
     list-style-type: none;
     padding-left: 0;
     margin-left: 40%;
     margin-right: 45%;
     display: block;
+}
+
+.category-elem {
+    display: inline-block;
+    padding: 0.5em;
+    margin-right: 0.5em;
+    border-radius: 10%;
+}
+
+.category-container {
+    @include centered-object();
+}
+
+li {
+    padding: 1em;
+    @include centered-object();
 }

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { PostDTO } from 'src/app/Models/post.dto';
 import { PostService } from 'src/app/Services/post.service';
 import { SharedService } from 'src/app/Services/shared.service';
@@ -15,8 +14,7 @@ export class DashboardComponent {
   total_dislikes: number;
     constructor(
       private postService: PostService,
-      private sharedService: SharedService,
-      private router: Router,
+      private sharedService: SharedService
     ) {
       this.total_dislikes = this.total_likes = 0;
     }

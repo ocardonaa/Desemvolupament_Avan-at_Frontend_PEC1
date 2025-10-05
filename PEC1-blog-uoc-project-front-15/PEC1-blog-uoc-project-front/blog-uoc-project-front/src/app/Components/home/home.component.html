@@ -1,7 +1,12 @@
 <!-- TODO 3 -->
 <h1>List of Posts</h1>
 <div>
-    <ul class="single-post" *ngFor="let post of posts">
+    <ul class="container-post" *ngFor="let post of posts">
+        <li class="category-container">
+            <div class="category-elem" [ngStyle]="{ backgroundColor: category.css_color }" *ngFor="let category of post.categories">
+                {{ category.title }}
+            </div>
+        </li>
         <li style="font-weight: 700;">
             Title: {{ post.title }}
         </li>
@@ -18,6 +23,7 @@
             Publication date: {{ post.publication_date | formatDate: 3 }}
         </li>
         <li>
+            Published by: {{ post.userAlias }}
         </li>
         <li *ngIf="showButtons">
             <button (click)="like(post.postId)">Like</button>
